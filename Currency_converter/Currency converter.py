@@ -21,6 +21,7 @@ class main (qt.QMainWindow):
         self.إظهار4=qt.QLabel("النتيجة")
         self.النتيجة=qt.QLineEdit()
         self.النتيجة.setAccessibleName("النتيجة")
+        self.النتيجة.setReadOnly(True)
         self.التحويل=qt.QPushButton("تحويل")
         self.التحويل.setDefault(True)
         self.التحويل.clicked.connect(self.c)
@@ -45,7 +46,7 @@ class main (qt.QMainWindow):
             self.النتيجة.setText(result)
             self.النتيجة.setFocus()
         except:
-            qt.QMessageBox.warning(self,"تنبيه","عفوا حدث خطأ, يرجى التأكد من الإتصال بالإنترنت")
+            qt.QMessageBox.warning(self,"تنبيه","عفوا حدث خطأ")
 app=qt.QApplication([])
 app.setStyle('fusion')
 w=main()
